@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace TestApp\Controller;
@@ -15,9 +16,6 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
         $this->loadComponent('Flash');
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Inertia\Middleware;
@@ -21,11 +22,14 @@ class InertiaMiddleware implements MiddlewareInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        if (!$request->hasHeader('X-Inertia')) {
-            return $handler->handle($request);
-        }
+
+
         if ($request instanceof ServerRequest) {
             $this->setupDetectors($request);
+        }
+
+        if (!$request->hasHeader('X-Inertia')) {
+            return $handler->handle($request);
         }
 
         $response = $handler->handle($request);
