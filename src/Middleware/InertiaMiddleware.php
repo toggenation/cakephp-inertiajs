@@ -21,14 +21,16 @@ class InertiaMiddleware implements MiddlewareInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        if (!$request->hasHeader('X-Inertia')) {
-            return $handler->handle($request);
-        }
         if ($request instanceof ServerRequest) {
             $this->setupDetectors($request);
         }
 
+        if (!$request->hasHeader('X-Inertia')) {
+            return $handler->handle($request);
+        }
+
         $response = $handler->handle($request);
+
         if (
             $response->getStatusCode() === Message::STATUS_FOUND
             && in_array($request->getMethod(), [Message::METHOD_PUT, Message::METHOD_PATCH, Message::METHOD_DELETE])
