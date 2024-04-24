@@ -59,7 +59,7 @@ class UsersController extends AppController
 {
     public function index()
     {
-        $this->set('users', $this->Users->find()->toArray());
+        $this->set('users', $this->Users->findAll()->toArray());
         $this->set('component', 'Users/Listing');
     }
 }
