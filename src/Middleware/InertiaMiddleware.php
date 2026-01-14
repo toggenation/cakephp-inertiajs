@@ -24,6 +24,9 @@ class InertiaMiddleware implements MiddlewareInterface
         if ($request instanceof ServerRequest) {
             $this->setupDetectors($request);
         }
+        if (!$request->hasHeader('X-Inertia')) {
+            return $handler->handle($request);
+        }
 
         if (!$request->hasHeader('X-Inertia')) {
             return $handler->handle($request);
