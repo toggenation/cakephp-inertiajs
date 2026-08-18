@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Inertia\Test;
@@ -27,7 +28,6 @@ class PluginTest extends TestCase
 
         $this->assertCount(2, $totalPlugins);
         $this->assertSame('Inertia', $totalPlugins->get('Inertia')->getName());
-        $this->assertSame('AssetMix', $totalPlugins->get('AssetMix')->getName());
     }
 
     public function testMiddleware()

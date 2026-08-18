@@ -26,9 +26,7 @@
 
 4. Just add below line into your layout(`Template/Layout/default.ctp`) file
 
-    ```php
-    echo $this->AssetMix->script('app');
-    ```
+   
 
     Your layout file should look something like this:
 
@@ -44,7 +42,7 @@
             // ...
 
             // Load `app.js` javascript file
-            <?= $this->AssetMix->script('app') ?>
+            <?= $this->Html->script('app') ?>
 
             <?= $this->fetch('meta') ?>
             <?= $this->fetch('css') ?>

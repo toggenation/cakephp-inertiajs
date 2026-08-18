@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Inertia;
 
-use AssetMix\AssetMixPlugin;
 use Cake\Core\BasePlugin;
 use Cake\Core\PluginApplicationInterface;
 use Cake\Http\MiddlewareQueue;
@@ -35,7 +34,5 @@ class InertiaPlugin extends BasePlugin
     public function bootstrap(PluginApplicationInterface $app): void
     {
         parent::bootstrap($app);
-
-        $app->addPlugin(AssetMixPlugin::class);
     }
 }

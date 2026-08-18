@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Inertia\View;
@@ -18,7 +19,6 @@ class InertiaWebView extends View
     public function initialize(): void
     {
         $this->loadHelper('Inertia.Inertia');
-        $this->loadHelper('AssetMix.AssetMix');
     }
 
     /**

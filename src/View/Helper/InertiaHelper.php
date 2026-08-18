@@ -28,7 +28,8 @@ class InertiaHelper extends Helper
         }
 
         return sprintf(
-            '<script data-page="app" type="application/json">%s</script><div id="%s" class="%s"></div>',
+            '<script data-page="app" type="application/json">%s</script>' . PHP_EOL .
+                '<div id="%s" class="%s"></div>',
             $encodedPageData,
             $id,
             $class
