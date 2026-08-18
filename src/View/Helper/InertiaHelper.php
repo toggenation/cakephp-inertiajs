@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Inertia\View\Helper;
@@ -27,9 +28,9 @@ class InertiaHelper extends Helper
         }
 
         return sprintf(
-            '<div id="%s" data-page="%s" class="%s"></div>',
+            '<script data-page="app" type="application/json">%s</script><div id="%s" class="%s"></div>',
+            $encodedPageData,
             $id,
-            htmlentities($encodedPageData),
             $class
         );
     }
